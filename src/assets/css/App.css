@@ -1,0 +1,87 @@
+/*CSS reset*/
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.markButton
+{
+    background-color: black;
+    border-radius: 8px;
+    border: none;
+    color: gold;
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 40px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.cashbutton
+{
+    background-color: darkblue;
+    border-radius: 50%;
+    border-style: none;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    display: inline-block;
+    font-size: 50px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.selectedMark
+{
+    border: 5px solid gold;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+
+.control
+{
+  text-align: center;
+}
+
+.container
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "cashColumn pickColumn selectedColumn";
+}
+
+.grid
+{
+    display: grid;
+}
+
+.grid-col-2
+{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.grid-col-4
+{
+    grid-template-columns: repeat(4,1fr);
+}
+
+.selectedColumn
+{
+    grid-area: selectedColumn;
+}
+
+.cashColumn
+{
+    grid-area: cashColumn;
+}
+
+.pickColumn
+{
+    grid-area: pickColumn;
+}
