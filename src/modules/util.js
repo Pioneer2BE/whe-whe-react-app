@@ -13,9 +13,4 @@ const createMark = () => {
 
 }
 
-
-const sayHello = () => {alert("Woi!!!")};
-
-
-
-export {createMark, sayHello};
+export {createMark};

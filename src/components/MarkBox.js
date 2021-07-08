@@ -1,16 +1,18 @@
-import React from 'react'
 import { useContext } from 'react'
 import { createMark } from '../modules/util'
 import MarkButton from './MarkButton'
+
+import BetAmtContext from '../context/BetAmtContext'
 import MarkContext from '../context/MarkContext'
 import MarkSelectionContext from '../context/MarkSelectionContext'
-import CashTotalContext from '../context/CashTotalContext'
+import CashModalContext from '../context/CashModalContext'
 
 const MarkBox = () => {
 
+    const{setBetAmount} = useContext(BetAmtContext);
     const{marks, setMarks} = useContext(MarkContext);
     const{setmarkSeltn} = useContext(MarkSelectionContext);
-    const{setCashTotal} = useContext(CashTotalContext);
+    const{setDspCashModal} = useContext(CashModalContext);
 
     const resetState = () => {
         const markList = createMark();
@@ -19,7 +21,13 @@ const MarkBox = () => {
         
         setMarks(markList);
         setmarkSeltn(markSeltn);
-        setCashTotal(CASH_TOTAL)
+        setBetAmount(CASH_TOTAL)
+
+    }
+
+    const openModal = () => {
+
+        setDspCashModal({display:true})
 
     }
 
@@ -29,7 +37,7 @@ const MarkBox = () => {
                   {marks.map((mark) => (<MarkButton key={mark.id} id = {mark.id} selected= {mark.selected} setMarks={mark.setMarks}/>))}
               </div>
               <div className="control">
-                  <button>Cash</button>
+                  <button onClick={openModal}>Cash</button>
                   <button onClick={resetState} >Clear</button>
               </div>
         </section>

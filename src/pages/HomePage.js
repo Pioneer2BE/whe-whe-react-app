@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import CashBox from '../components/CashBox';
 import MarkBox from '../components/MarkBox';
 import SelectionBox from '../components/SelectionBox';
+import CashModal from '../components/CashModal';
+import BillModal from '../components/BillModal';
 import Footer from '../components/Footer';
 
 const HomePage = () => {
@@ -15,6 +17,8 @@ const HomePage = () => {
                 <MarkBox/>
                 <SelectionBox/>
             </main>
+            <CashModal/>
+            <BillModal/>
             <Footer/>
         </>
     )

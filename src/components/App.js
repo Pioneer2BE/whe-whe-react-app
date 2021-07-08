@@ -8,11 +8,11 @@ import {
 
 import { useState } from 'react';
 
-
+import BetAmtContext from '../context/BetAmtContext';
 import MarkContext from '../context/MarkContext';
 import MarkSelectionContext from '../context/MarkSelectionContext';
-import CashTotalContext from '../context/CashTotalContext';
-
+import CashModalContext from '../context/CashModalContext';
+import BillContext from '../context/BillContext';
 
 import HomePage from '../pages/HomePage';
 
@@ -32,37 +32,47 @@ function App() {
 
   //Create cash total initial state.
 
-  const total = 0;
+  const BET_AMOUNT = 0;
 
-  const [cashTotal, setCashTotal] = useState(total)
+  const [betAmount, setBetAmount] = useState(BET_AMOUNT)
+
+  const [dspCashModal, setDspCashModal] = useState({display:false})
 
   //Create bill object initial state
-  /* const billObj = 
+  const billObj = 
   {
-    setMarks:[],
-    total:0
+    display: false,
+    selMarks:[],
+    total:0,
+    recAmt:0,
+    change:0,
+    trnsDate:"",
+    trnTime:""
   }
 
-  const [billObjState, setBillObjState] = useState(billObj) */
+  const [billObjState, setBillObjState] = useState(billObj)
 
 
 
   return (
-    <> 
-       <Router>
-          <MarkContext.Provider value = {{marks, setMarks}}>
-          <MarkSelectionContext.Provider value = {{markSeltn, setmarkSeltn}}>
-          <CashTotalContext.Provider value = {{cashTotal, setCashTotal}}>
+    <>
+      <Router>
+        <BetAmtContext.Provider value = {{betAmount, setBetAmount}}>
+        <MarkContext.Provider value = {{marks, setMarks}}>
+        <MarkSelectionContext.Provider value = {{markSeltn, setmarkSeltn}}>
+        <CashModalContext.Provider value = {{dspCashModal, setDspCashModal}}>
+        <BillContext.Provider value = {{billObjState, setBillObjState}}>
           <Switch>
-            <Route exact path="/">
-              <HomePage/>
-            </Route>
+              <Route exact path="/">
+                <HomePage/>
+              </Route>
           </Switch>
-          </CashTotalContext.Provider>
-          </MarkSelectionContext.Provider>
-          </MarkContext.Provider>
-        </Router>
-
+        </BillContext.Provider>
+        </CashModalContext.Provider>
+        </MarkSelectionContext.Provider>
+        </MarkContext.Provider>
+        </BetAmtContext.Provider>
+      </Router>
     </>
   );
 

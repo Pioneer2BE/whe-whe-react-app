@@ -2,19 +2,19 @@ import React from 'react'
 
 import {useContext} from 'react'
 
-import CashTotalContext from '../context/CashTotalContext'
+import BetAmtContext from '../context/BetAmtContext'
 
 const CashBox = () => {
 
-    const {cashTotal, setCashTotal} = useContext(CashTotalContext)
+    const {betAmount, setBetAmount} = useContext(BetAmtContext)
 
     const addCashVal = (evt) => { 
         
         const cash = parseInt(evt.target.value);
 
-        const newCashtotal = cashTotal + cash;
+        const newBetAmountl = betAmount + cash;
 
-        setCashTotal(newCashtotal)
+        setBetAmount(newBetAmountl)
     
     }
 

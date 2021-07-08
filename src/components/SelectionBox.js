@@ -3,20 +3,20 @@ import React from 'react'
 import { useContext } from 'react'
 
 import MarkSelectionContext from '../context/MarkSelectionContext'
-import CashTotalContext from '../context/CashTotalContext';
+import BetAmtContext from '../context/BetAmtContext';
 
 import MarkSelection from './MarkSelection';
 
 const SelectionBox = () => {
 
     const{markSeltn} = useContext(MarkSelectionContext);
-    const{cashTotal} = useContext(CashTotalContext)
+    const{betAmount} = useContext(BetAmtContext)
 
     return (
         <section className="selectedColumn">
             <h3>Numbers Selected</h3>
             {markSeltn.map((mark) => (<MarkSelection key={mark} id = {mark}/>))}
-            <p>Total: {cashTotal}</p>
+            <p>Total: {betAmount}</p>
         </section>
     )
 }
