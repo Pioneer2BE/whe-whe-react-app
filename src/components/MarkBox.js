@@ -15,13 +15,14 @@ const MarkBox = () => {
     const{setDspCashModal} = useContext(CashModalContext);
 
     const resetState = () => {
+
         const markList = createMark();
         const markSeltn = [];
-        const CASH_TOTAL = 0;
+        const BET_AMOUNT = 0;
         
         setMarks(markList);
         setmarkSeltn(markSeltn);
-        setBetAmount(CASH_TOTAL)
+        setBetAmount(BET_AMOUNT);
 
     }
 

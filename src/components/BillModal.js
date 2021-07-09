@@ -40,7 +40,7 @@ const BillModal = () => {
         setmarkSeltn(markSeltn);
         setBetAmount(BET_AMOUNT)
         setBillObjState(billObj)
-
+        
     }
 
     return (
